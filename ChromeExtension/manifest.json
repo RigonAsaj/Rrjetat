@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "IG Extension",
+  "version": "0.1",
+  "offline_enabled": true,
+
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [{
+    "matches": ["*://*.instagram.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle",
+    "all_frames": false
+  }],
+
+  "page_action": {
+    "default_icon":"images/ig.png",
+    "default_title": "Click to show the popup",
+    "default_popup": "popup.html"
+  }
+
+}
